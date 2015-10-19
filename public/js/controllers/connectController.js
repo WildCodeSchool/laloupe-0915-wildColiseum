@@ -1,6 +1,6 @@
 // MAIN CONTROLLER
-function connectController($scope, $http, connectService) {
-	$scope.title = "Wild coliseum";
+function connectController($scope, $http, $location, connectService) {
+	$scope.title = "Wild coliseum"; //regarder doc angular.js $location
 	
 
 	$scope.connect = function(){
@@ -9,10 +9,12 @@ function connectController($scope, $http, connectService) {
 		login.password = $scope.password;
 		connectService.login(login).then(function(res){
 			//SUCCESS
-			if (res.data)
+			if (res.data){
 				alert("bienvenue");
-			else
+				$location.path('/accueil');
+			}else{
 				alert("pseudo ou mot de passe incorrect");
+				$location.path('/connect');}
 		}, function(){
 			//ERROR
 		})
