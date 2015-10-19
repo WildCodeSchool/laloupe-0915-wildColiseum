@@ -1,0 +1,27 @@
+<h1> Inscription</h1>
+    <form class= "inscription">
+        <div>
+    		<p>Pseudo :</p>
+            <input type="text" label="nom" ng-model="pseudo"> 
+        </div>
+        <div>
+            <p>Mail :</p>
+            <input type="email" label="mail" 
+                   ng-model="email" >
+        </div>
+        <div>
+            <p>Mot de Passe :</p>
+            <input type="text" label="mot de passe" ng-model="password" />
+        </div>
+        <div>
+    		<p>Nom :</p>
+            <input type="text" label="nom" ng-model="nom" >
+        </div>
+        <div>
+            <p>Prénom :</p>
+            <input type="text" label="prénom" ng-model="prenom" >
+        </div>
+        <div class="bouton-send">
+   	       <a href="#/main"><button type="submit" class="btn btn-default" ng-click="send()">S'inscrire</button></a>
+        </div>
+    </form>

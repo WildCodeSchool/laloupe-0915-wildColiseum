@@ -1,0 +1,41 @@
+<!-- Page accueil membre -->
+<!-- Changer titre fichier + h1 -->
+<h2>Accueil</h2><h3 class="titre-section">Question aléatoire :</h3><div class="bloc-question">
+    <p class="question">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit ?
+    </p>
+    <div class="bloc-choix-reponse">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Quasi voluptate pariatur iure harum cupiditate eius quam repellat nobis ullam deleniti ducimus, minus.
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             Repellat nobis ullam deleniti ducimus, minus.
+          </label>
+        </div>
+        <!-- Ajouter "disabled" en tant que 'class' à la div pour désactiver un champs. -->
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+            <!-- ajouter "disabled" en guise de 'propriété' dans input -->
+            Quasi voluptate pariatur iure harum cupiditate eius quam repellat
+          </label>
+        </div>
+    </div>
+    <div class="bouton-question">
+            <a href="#/accueil"><button type="submit" class="btn btn-default" ng-click="send_res()">Valider</button></a>
+    </div>
+</div><!-- Questionnaire à choix multiple: (BOOTSTRAP)
+                    & inline...<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label> 

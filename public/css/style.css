@@ -1,0 +1,89 @@
+/*-----------------SOMMAIRE-----------------*\
+/* GENERAL..................................*\
+/* LOGIN....................................*\
+/* PROFIL...................................*\
+/*..........................................*\
+/*..........................................*\
+/*..........................................*\
+/*------------------------------------------*\
+
+/*-------- $GENERAL ----------*/
+body{
+   padding-top: 70px;
+}
+.navbar-border{
+    border-bottom: 3px solid #F0DB4F;
+}
+
+.navbar-header img{
+    transition: 0.4s;
+}
+.navbar-header img:hover{
+    transform: rotate(360deg);
+}  
+
+.titre-section{
+    margin-left: 30px;
+}
+
+.btn:hover{
+    background-color: #C0CA3D;
+}
+
+/*----    $PAGE Login    -------*/
+h1{
+   text-align: center;
+   font-size: 500%;
+}
+
+h2{
+    margin: 50px;
+}
+
+.form_login{
+   width: 300px;
+   margin: auto;
+   text-align: center;
+   margin-top: 90px;
+}
+
+.password{
+   margin-top: 20px;
+}
+
+.bouton-send{
+   width: 300px;
+   margin: auto;
+   text-align: center;
+   margin-top: 20px;
+}
+
+/*-----    $PAGE profil   -----*/
+.inscription{
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/*-----    Bloc Question   -------*/
+.bloc-question{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.bloc-question p{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.bouton-question{
+    text-align: right;
+}
+
+.bloc-choix-reponse{
+    width: 90%;
+    margin: auto;
+} 
