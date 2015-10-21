@@ -1,6 +1,6 @@
 //    CONTROLLER POST_QUESTION
 
-function postQuestionController($scope, postQuestionService){
+function postQuestionController($scope, $http, postQuestionService){
 
 
 	$scope.sendQuestion = function(){
@@ -18,7 +18,28 @@ function postQuestionController($scope, postQuestionService){
 		}, function(res){
 			//ERROR
 			alert('Erreur');
-		})
+			//load();
+		});
 	}
 
+	function load(){
+		postQuestionService.get().then(function(res){
+			$scope.questions = res.data;
+			});
+
+	}
+
+	$scope.update = function(question){
+		postQuestionService.update(question.id, todo).then(function(res){
+			load();
+		});
+	}
+
+	$scope.delete = function(question){
+		postQuestionService.delete(question.id).then(function(res){
+			load();
+		});
+	}
+	
+	load();
 }

@@ -28,6 +28,12 @@ module.exports.create = function(req, res) {
 	})
 };
 
+module.exports.findAll = function(req, res) {
+  Question.findAll().then(function (data) {
+    res.json(data); 
+  });
+};
+
 // module.exports.find = function(req, res){
 //   Question.findOne({
 //     where: {
@@ -38,3 +44,25 @@ module.exports.create = function(req, res) {
 //     res.json(question);
 //   })
 // }
+
+module.exports.update = function(req, res){
+  Question.update({
+    description: req.body.description
+  }, {
+    where: {
+      id: req.params.id
+    }
+  }).then(function(){
+    res.sendStatus(200);
+  })
+}
+
+module.exports.delete = function(req, res){
+  Question.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(){
+    res.sendStatus(200);
+  })
+}
