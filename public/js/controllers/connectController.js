@@ -11,7 +11,7 @@ function connectController($scope, $http, $location, connectService) {
 			//SUCCESS
 			if (res.data){
 				alert("bienvenue");
-				$location.path('/accueil');
+				$location.path('/quiz');
 			}else{
 				alert("pseudo ou mot de passe incorrect");
 				$location.path('/connect');}

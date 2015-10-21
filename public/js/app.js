@@ -11,9 +11,9 @@ function config($routeProvider) {
 			templateUrl: 'views/profil.html',
 			controller: 'profilController'
 		})
-		.when('/accueil', {
-			templateUrl: 'views/accueil.html'
-			//Créer controller pour afficher question aléatoire
+		.when('/quiz', {
+			templateUrl: 'views/quiz.html',
+			controller: 'quizController'
 		})
 		.when('/postQuestion', {
 			templateUrl: 'views/postQuestion.html',
@@ -36,9 +36,11 @@ angular.module('app', ['ngRoute'])
     .controller('connectController', connectController)
     .controller('profilController', profilController)
     .controller('postQuestionController', postQuestionController)
+    .controller('quizController', quizController)
     .service('connectService', connectService)
     .service('userService', userService)
     .service('postQuestionService', postQuestionService)
+    .service('quizService', quizService)
     /*.factory('', )*/
     .run(run);
 

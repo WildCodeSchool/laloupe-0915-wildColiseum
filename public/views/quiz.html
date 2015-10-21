@@ -1,0 +1,30 @@
+<!-- Page accueil membre -->
+<!-- Changer titre fichier + h1 -->
+<h2>Accueil</h2><h3 class="titre-section">Question aléatoire :</h3>
+
+<div class="bloc-question">
+    <p class="question">
+      {{question.question}}
+    </p>
+    <input type="text" ng-model="selectedChoice">
+    <div class="bloc-choix-reponse" ng-repeat="choice in choices | orderBy: random">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" value="{{choice}}" ng-model="selectedChoice">
+            {{choice}}
+          </label>
+        </div>
+    </div>
+    <div class="bouton-question">
+            <a href=""><button type="submit" class="btn btn-default" ng-click="send_res()">Valider</button></a>
+    </div>
+</div><!-- Questionnaire à choix multiple: (BOOTSTRAP)
+                    & inline...<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+ <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label> 
