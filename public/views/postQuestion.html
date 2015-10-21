@@ -1,30 +1,30 @@
 <h2>Admin</h2>
 <h3>Ajouter une question</h3>
     <form class="question">
-        <div>
-    		<p>Question :</p>
-            <input type="text" label="question" ng-model="question"> 
+        <div class="bloc_input">
+    		<p class="bold">Question :</p>
+            <textarea label="question" ng-model="question"></textarea>
         </div>
-        <div>
-            <p>Choix 1 :</p>
+        <div class="bloc_input">
+            <p class="bold">Choix 1 :</p>
             <p><i>Le choix 1 est la réponse valide à l'énoncé.</i></p>
-            <input type="text" label="choix_1_valide" ng-model="choix_1_valide" >
+            <input type="text" label="choix_1_valide" ng-model="choix_1_valide">
         </div>
-        <div>
-            <p>Choix 2 :</p>
-            <input type="text" label="choix_2" ng-model="choix_2" />
+        <div class="bloc_input">
+            <p class="bold">Choix 2 :</p>
+            <input type="text" label="choix_2" ng-model="choix_2"/>
         </div>
-        <div>
-    		<p>Choix 3:</p>
-            <input type="text" label="choix_3" ng-model="choix_3" >
+        <div class="bloc_input">
+    		<p class="bold">Choix 3:</p>
+            <input type="text" label="choix_3" ng-model="choix_3">
         </div>
-        <div>
-            <p>Choix 4 :</p>
-            <input type="text" label="choix_4" ng-model="choix_4" >
+        <div class="bloc_input">
+            <p class="bold">Choix 4 :</p>
+            <input type="text" label="choix_4" ng-model="choix_4">
         </div>
-        <div>
-            <p>Enoncé de solution :</p>
-            <input type="text" label="enonce_solution" ng-model="enonce_solution" >
+        <div class="bloc_input">
+            <p class="bold">Enoncé de solution :</p>
+            <textarea label="enonce_solution" ng-model="enonce_solution"></textarea>
         </div>
    <!--      <div>
             <p>Thème de la question :</p>
@@ -40,40 +40,45 @@
         <div class="bouton-send">
    	       <button type="submit" class="btn btn-default" ng-click="sendQuestion()">Envoyer</button>
         </div>
-        <!-- Faire afficher toutes les questions -->
-<h3>Liste des questions</h3>
     </form>
+
+<h3>Liste des questions</h3>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="question in questions">
                 <form class="form-inline">
-                    <div class="form-group get_question">
-                        <h4>Enoncé de la question :</h4>
-                        <input type="text" class="form-control" id="inputMessage" ng-model="question.question">
+                    <div>
+                        <div class="form-group ">
+                            <h4>Enoncé de la question :</h4>
+                            <textarea class="form-control" ng-model="question.question"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group get_question">
-                        <h4>Choix 1 et réponse à la question :</h4>
-                        <input type="text" class="form-control" id="inputMessage"ng-model="question.choix_1_valide">
+                    <div>
+                        <div class="form-group bloc_reponse">
+                            <h4>Choix 1 <br/>(réponse à la question) :</h4>
+                            <input type="text" class="form-control" ng-model="question.choix_1_valide">
+                        </div>
+                        <div class="form-group bloc_reponse">
+                            <h4>Choix 2 :</h4>
+                            <input type="text" class="form-control" ng-model="question.choix_2">
+                        </div>
+                        <div class="form-group bloc_reponse">
+                            <h4>Choix 3 :</h4>
+                            <input type="text" class="form-control" ng-model="question.choix_3">
+                        </div>
+                        <div class="form-group bloc_reponse">
+                            <h4>Choix 4:</h4>
+                            <input type="text" class="form-control" ng-model="question.choix_4">
+                        </div>
                     </div>
-                    <div class="form-group get_question">
-                        <h4>Choix 2 :</h4>
-                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_2">
+                    <div class="form-group ">
+                        <h4>Enoncé de la solution :</h4>
+                            <textarea class="form-control"  ng-model="question.enonce_solution"></textarea>
+                        <div class="pull-right bloc_update">
+                            <button type="submit" class="btn btn-default" ng-click="update(question)">Mettre à jour</button>
+                            <button type="submit" class="btn btn-danger" ng-click="delete(question)">Supprimer</button>
+                        </div>
                     </div>
-                    <div class="form-group get_question">
-                        <h4>Choix 3 :</h4>
-                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_3">
-                    </div>
-                    <div class="form-group get_question">
-                        <h4>Choix 4:</h4>
-                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_4">
-                    </div>
-                    <div class="form-group get_question">
-                    <h4>Enoncé de la solution :</h4>
-                        <input type="text" class="form-control" id="inputMessage" ng-model="question.enonce_solution">
-                    </div>
-                    <div class="pull-right">
-                        <button type="submit" class="btn btn-default" ng-click="update(question)">Mettre à jour</button>
-                        <button type="submit" class="btn btn-danger" ng-click="delete(question)">Supprimer</button>
-                    </div>
+                    
                 </form>
             </li>
         </ul>

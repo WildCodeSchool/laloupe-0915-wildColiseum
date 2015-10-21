@@ -30,6 +30,17 @@ body{
     background-color: #C0CA3D;
 }
 
+.bold{
+  font-weight: bold;
+}
+
+.bouton-send{
+   width: 300px;
+   margin: auto;
+   text-align: center;
+   margin-top: 20px;
+}
+
 /*----    $PAGE Login    -------*/
 h1{
    text-align: center;
@@ -48,13 +59,6 @@ h2{
 }
 
 .password{
-   margin-top: 20px;
-}
-
-.bouton-send{
-   width: 300px;
-   margin: auto;
-   text-align: center;
    margin-top: 20px;
 }
 
@@ -90,6 +94,29 @@ h2{
 
 /*------- PAGE ADMIN -----*/
 
-.get_question{
+.question{
+  text-align: center;
+}
+
+.bloc_input{
+  margin: 20px;
+}
+
+.bloc_input input{
+  width: 300px;
+}
+
+textarea{
+  width: 300px !important;
+  height: 80px !important;
+}
+
+.bloc_reponse{
   width: 20%;
+  vertical-align: bottom !important;
+}
+
+
+.bloc_update{
+  margin: 20px;
 }
