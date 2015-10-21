@@ -12,8 +12,12 @@ function config($routeProvider) {
 			controller: 'profilController'
 		})
 		.when('/accueil', {
-			templateUrl: 'views/accueil.html',
-			
+			templateUrl: 'views/accueil.html'
+			//Créer controller pour afficher question aléatoire
+		})
+		.when('/postQuestion', {
+			templateUrl: 'views/postQuestion.html',
+			controller: 'postQuestionController'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -31,8 +35,10 @@ angular.module('app', ['ngRoute'])
     .config(config)
     .controller('connectController', connectController)
     .controller('profilController', profilController)
+    .controller('postQuestionController', postQuestionController)
     .service('connectService', connectService)
     .service('userService', userService)
+    .service('postQuestionService', postQuestionService)
     /*.factory('', )*/
     .run(run);
 
