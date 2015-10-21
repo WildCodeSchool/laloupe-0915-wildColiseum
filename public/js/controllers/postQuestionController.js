@@ -2,6 +2,11 @@
 
 function postQuestionController($scope, $http, postQuestionService){
 
+	function load(){
+		postQuestionService.get().then(function(res){
+			$scope.questions = res.data;
+		});
+	}
 
 	$scope.sendQuestion = function(){
 		var question = {};
@@ -15,22 +20,16 @@ function postQuestionController($scope, $http, postQuestionService){
 		postQuestionService.create(question).then(function(res){
 			//SUCCESS
 			alert('OK');
+			load();
 		}, function(res){
 			//ERROR
 			alert('Erreur');
-			//load();
 		});
 	}
 
-	function load(){
-		postQuestionService.get().then(function(res){
-			$scope.questions = res.data;
-			});
-
-	}
 
 	$scope.update = function(question){
-		postQuestionService.update(question.id, todo).then(function(res){
+		postQuestionService.update(question.id, question).then(function(res){
 			load();
 		});
 	}

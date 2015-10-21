@@ -9,7 +9,7 @@ var Question = db.define('question', {
   choix_2: Sequelize.STRING,
   choix_3: Sequelize.STRING,
   choix_4: Sequelize.STRING,
-  enonce_solution: Sequelize.STRING,
+  enonce_solution: Sequelize.STRING
 });
 
 Question.sync().then(function(){});
@@ -18,11 +18,11 @@ Question.sync().then(function(){});
 module.exports.create = function(req, res) {
 	Question.create({
 		question: req.body.question,
-  		choix_1_valide: req.body.choix_1_valide,
-  		choix_2: req.body.choix_2,
-  		choix_3: req.body.choix_3,
-  		choix_4: req.body.choix_4,
-  		enonce_solution: req.body.enonce_solution
+		choix_1_valide: req.body.choix_1_valide,
+		choix_2: req.body.choix_2,
+		choix_3: req.body.choix_3,
+		choix_4: req.body.choix_4,
+		enonce_solution: req.body.enonce_solution
 	}).then(function(){
 		res.sendStatus(200);
 	})
@@ -34,20 +34,14 @@ module.exports.findAll = function(req, res) {
   });
 };
 
-// module.exports.find = function(req, res){
-//   Question.findOne({
-//     where: {
-//       question: req.body.question,
-//       choix_1_valide: req.body.choix_1_valide
-//     }
-//   }).then(function(question){
-//     res.json(question);
-//   })
-// }
-
 module.exports.update = function(req, res){
   Question.update({
-    description: req.body.description
+    question: req.body.question,
+    choix_1_valide: req.body.choix_1_valide,
+    choix_2: req.body.choix_2,
+    choix_3: req.body.choix_3,
+    choix_4: req.body.choix_4,
+    enonce_solution: req.body.enonce_solution
   }, {
     where: {
       id: req.params.id
@@ -55,7 +49,7 @@ module.exports.update = function(req, res){
   }).then(function(){
     res.sendStatus(200);
   })
-}
+};
 
 module.exports.delete = function(req, res){
   Question.destroy({
@@ -65,4 +59,4 @@ module.exports.delete = function(req, res){
   }).then(function(){
     res.sendStatus(200);
   })
-}
+};

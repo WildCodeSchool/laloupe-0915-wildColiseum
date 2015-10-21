@@ -46,39 +46,33 @@
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="question in questions">
                 <form class="form-inline">
-                    <div class="form-group">
+                    <div class="form-group get_question">
                         <h4>Enoncé de la question :</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.question">
+                        <input type="text" class="form-control" id="inputMessage" ng-model="question.question">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group get_question">
                         <h4>Choix 1 et réponse à la question :</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.choix_1_valide">
+                        <input type="text" class="form-control" id="inputMessage"ng-model="question.choix_1_valide">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group get_question">
                         <h4>Choix 2 :</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.choix_2">
+                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_2">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group get_question">
                         <h4>Choix 3 :</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.choix_3">
+                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_3">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group get_question">
                         <h4>Choix 4:</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.choix_4">
+                        <input type="text" class="form-control" id="inputMessage" ng-model="question.choix_4">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group get_question">
                     <h4>Enoncé de la solution :</h4>
-                        <input type="text" class="form-control" id="inputMessage" 
-                               ng-model="question.enonce_solution">
+                        <input type="text" class="form-control" id="inputMessage" ng-model="question.enonce_solution">
                     </div>
                     <div class="pull-right">
-                        <button type="submit" class="btn btn-default" ng-click="update(todo)">Mettre à jour</button>
-                        <button type="submit" class="btn btn-danger" ng-click="delete(todo)">Supprimer</button>
+                        <button type="submit" class="btn btn-default" ng-click="update(question)">Mettre à jour</button>
+                        <button type="submit" class="btn btn-danger" ng-click="delete(question)">Supprimer</button>
                     </div>
                 </form>
             </li>
