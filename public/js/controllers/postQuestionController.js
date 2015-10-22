@@ -5,6 +5,7 @@ function postQuestionController($scope, $http, postQuestionService){
 	function load(){
 		postQuestionService.get().then(function(res){
 			$scope.questions = res.data;
+			$scope.theme = res.data;
 		});
 	}
 

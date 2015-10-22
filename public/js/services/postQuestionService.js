@@ -3,6 +3,9 @@ function postQuestionService($http){
 		get : function() {
 			return $http.get('/questions');
 			},
+		get : function() {
+			return $http.get('/theme');
+			},
 		update : function(id, question){
 			return $http.put('/questions/' + id, question);
 		},

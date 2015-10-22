@@ -5,6 +5,17 @@
     		<p class="bold">Question :</p>
             <textarea label="question" ng-model="question"></textarea>
         </div>
+        <div>
+            <p>Thème de la question :</p>
+            <select ng-model="theme">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+                <option>Ruby</option>
+                <option>PHP</option>
+            </select>
+        </div>
+        <!--rajouter ng-model, label pour Select-->
         <div class="bloc_input">
             <p class="bold">Choix 1 :</p>
             <p><i>Le choix 1 est la réponse valide à l'énoncé.</i></p>
@@ -26,17 +37,7 @@
             <p class="bold">Enoncé de solution :</p>
             <textarea label="enonce_solution" ng-model="enonce_solution"></textarea>
         </div>
-   <!--      <div>
-            <p>Thème de la question :</p>
-            <select>
-                <option>HTML</option>
-                <option>CSS</option>
-                <option>JavaScript</option>
-                <option>Ruby</option>
-                <option>PHP</option>
-            </select>
-        </div> -->
-        <!--rajouter ng-model, label pour Select-->
+       
         <div class="bouton-send">
    	       <button type="submit" class="btn btn-default" ng-click="sendQuestion()">Envoyer</button>
         </div>
