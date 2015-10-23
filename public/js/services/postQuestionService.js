@@ -3,7 +3,7 @@ function postQuestionService($http){
 		get : function() {
 			return $http.get('/questions');
 			},
-		get : function() {
+		getTheme : function() {
 			return $http.get('/theme');
 			},
 		update : function(id, question){
