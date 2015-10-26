@@ -1,4 +1,4 @@
-function profilController($scope, userService){
+function profilController($scope, $location, userService){
 
 
 	$scope.send = function(){
@@ -9,13 +9,29 @@ function profilController($scope, userService){
 		user.nom = $scope.nom;
 		user.prenom = $scope.prenom;
 		
+		//ANCIENNEMENT
+		// userService.create(user).then(function(res){
+		// 	//SUCCESS
+		// 	alert('OK');
+		// }, function(res){
+		// 	//ERROR
+		// 	alert('KO');
+		// })
+
+		//TEST $LOCATION.PATH SUR BOUTON s'inscrire. POUR fixBug <a>.
+		//Test VALIDE..
 		userService.create(user).then(function(res){
 			//SUCCESS
-			alert('OK');
-		}, function(res){
-			//ERROR
-			alert('KO');
+			if (res){ //Mettre condition pour validation
+				alert("Votre compte a été créé avec succés.");
+				$location.path('/');
+			}
+			//ERREUR
+			else{
+				alert("Erreur lors de la création du compte");
+				$location.path('/connect');}
 		})
+
 	}
 
 

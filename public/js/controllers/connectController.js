@@ -11,12 +11,12 @@ function connectController($scope, $http, $location, connectService) {
 			//SUCCESS
 			if (res.data){
 				alert("bienvenue");
-				$location.path('/quiz');
-			}else{
+				$location.path('/quiz'); //  $location est natif angular. Est placé en paramètre.
+			}
+			//ERREUR
+			else{
 				alert("pseudo ou mot de passe incorrect");
 				$location.path('/connect');}
-		}, function(){
-			//ERROR
 		})
 	}
 }
