@@ -10,31 +10,28 @@ function profilController($scope, $location, userService){
 		user.password = $scope.password;
 		user.nom = $scope.nom;
 		user.prenom = $scope.prenom;
-		
-		//ANCIENNEMENT
-		// userService.create(user).then(function(res){
-		// 	//SUCCESS
-		// 	alert('OK');
-		// }, function(res){
-		// 	//ERROR
-		// 	alert('KO');
-		// })
-
-		//TEST $LOCATION.PATH SUR BOUTON s'inscrire. POUR fixBug <a>.
-		//Test VALIDE..
-		userService.create(user).then(function(res){
-			//SUCCESS
-			if (res){ //Mettre condition pour validation
+	
+		if ($scope.signin.$valid){
+			userService.create(user).then(function(){
 				alert("Votre compte a été créé avec succés.");
 				$location.path('/');
-			}
-			//ERREUR
-			else{
-				alert("Erreur lors de la création du compte");
-				$location.path('/connect');}
-		})
-
+			});
+		}else if($scope.signin.pseudo.$valide != true){
+			alert('Erreur dans le champs "pseudo".');
+		}else if($scope.signin.email.$valide != true){
+			alert('Erreur dans le champs "email".');
+		}else if($scope.signin.password.$valide != true){
+			alert('Erreur dans le champs "password".');
+		}else if($scope.signin.nom.$valide != true){
+			alert('Erreur dans le champs "nom".');
+		}else if($scope.signin.prénom.$valide != true){
+			alert('Erreur dans le champs "prénom".');
+		}
+		else{
+			alert("Erreur lors de la création du compte, merci de renseigner tous les champs");
+			$location.path('/profil');
+		}
 	}
 
-
 }
+

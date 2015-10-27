@@ -64,11 +64,25 @@ h2{
 
 /*-----    $PAGE profil   -----*/
 .inscription{
-    width: 300px;
+    width: 400px;
     margin: auto;
     text-align: center;
+
 }
 
+.inscription div{
+  margin: 50px;
+  text-align: left;
+}
+
+.inscription input{
+  float: right;
+}
+
+.inscription input[type="submit"]{
+  text-align: center;
+  float: none;
+}
 
 /*-----    $PAGE Quiz   -------*/
 .bloc-question{

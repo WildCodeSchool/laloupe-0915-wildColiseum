@@ -1,27 +1,52 @@
 <h1> Inscription</h1>
-    <form class= "inscription">
+    <form class= "inscription" ng-model="inscription" name="signin" ng-submit="send()">
+            <div>
+                Pseudo : <input type="text" label="nom" ng-model="pseudo" name="pseudo" required/> 
+            </div>
+            <div>
+                Mail : <input type="email" label="mail" ng-model="email" name="email" required/>
+            </div>
+            <div>
+                Mot de Passe :<input type="password" label="mot de passe" ng-model="password" name="password" required/>
+            </div>
+            <div>
+                Nom : <input type="text" label="nom" ng-model="nom" name="nom" required/>
+            </div>
+            <div>
+                Prénom : <input type="text" label="prénom" ng-model="prenom" name="prenom" required/>
+            </div>
+           <input type="submit" class="btn btn-default" value="Valider"/>
+    </form>
+
+
+<!-- <h1> Inscription</h1>
+    <form class= "inscription" ng-model="inscription" >
         <div>
     		<p>Pseudo :</p>
-            <input type="text" label="nom" ng-model="pseudo"> 
+            <input type="text" label="nom" ng-model="pseudo" required/> 
         </div>
         <div>
             <p>Mail :</p>
             <input type="email" label="mail" 
-                   ng-model="email" >
+                   ng-model="email" required/>
         </div>
         <div>
             <p>Mot de Passe :</p>
-            <input type="text" label="mot de passe" ng-model="password" />
+            <input type="password" label="mot de passe" ng-model="password" required/>
+        </div>
+        <div>
+            <p>Retapez votre mot de passe :</p>
+            <input type="password" label="mot de passe" required/>
         </div>
         <div>
     		<p>Nom :</p>
-            <input type="text" label="nom" ng-model="nom" >
+            <input type="text" label="nom" ng-model="nom" required/>
         </div>
         <div>
             <p>Prénom :</p>
-            <input type="text" label="prénom" ng-model="prenom" >
+            <input type="text" label="prénom" ng-model="prenom" required/>
         </div>
         <div class="bouton-send">
    	       <button type="submit" class="btn btn-default" ng-click="send()">S'inscrire</button>
         </div>
-    </form>
+    </form> -->
