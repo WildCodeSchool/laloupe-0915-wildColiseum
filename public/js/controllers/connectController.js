@@ -16,7 +16,8 @@ function connectController($scope, $http, $location, connectService) {
 			//ERREUR
 			else{
 				alert("pseudo ou mot de passe incorrect");
-				$location.path('/connect');}
+				$location.path('/connect');
+			}
 		})
 	}
 }

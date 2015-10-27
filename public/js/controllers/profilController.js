@@ -1,6 +1,8 @@
 function profilController($scope, $location, userService){
 
 
+//VOIR ng-if pour vérification des termes avant l'envoi du formulaire
+//  http://www.grafikart.fr/forum/topics/15002
 	$scope.send = function(){
 		var user = {};
 		user.pseudo = $scope.pseudo;

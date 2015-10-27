@@ -1,6 +1,6 @@
 //    CONTROLLER QUIZ
 
-function quizController($scope, $http, quizService){
+function quizController($scope, $http, $location, quizService){
 	$scope.choices = [];
 
 	var max = 0;
@@ -32,23 +32,46 @@ function quizController($scope, $http, quizService){
 			
 			var i = superRandom([-1]);
 			console.log(i);
-			$scope.choices[i] = res.data[id].choix_1_valide;
+			$scope.choices[i] = {id:0, message:res.data[id].choix_1_valide};
 			
 			var j  = superRandom([i]);
 			console.log(j);
-			$scope.choices[j] = res.data[id].choix_2;
+			$scope.choices[j] = {id: 1, message:res.data[id].choix_2};
 
 			var k  = superRandom([i,j]);
 			console.log(k);
-			$scope.choices[k] = res.data[id].choix_3;
+			$scope.choices[k] = {id: 2, message:res.data[id].choix_3};
 
 			var l  = superRandom([i,j, k]);
 			console.log(l);
-			$scope.choices[l] = res.data[id].choix_4;
+			$scope.choices[l] = {id: 3, message:res.data[id].choix_4};
 
 			});
-
 	}
 	load();
 
+	$scope.send_res = function(){
+		var response = {};
+		response.selectedChoice = $scope.selectedChoice;
+		response.question = $scope.question;
+		//console.log($scope.selectedChoice);
+		quizService.send_res(response).then(function(res){
+			//SUCCESS
+			if ($scope.selectedChoice.id == 0){
+				alert("Bravo");
+				$location.path('/quiz');
+				$scope.enonceOk = false;
+				load(); //changer de question quand réponse correct.
+			}
+			//ERREUR
+			else{
+				$scope.enonceOk = true;
+			}
+		})
+	}
+
+	$scope.load = function(){
+		$scope.enonceOk = false;
+		load();
+	}
 }

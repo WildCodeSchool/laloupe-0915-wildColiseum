@@ -70,7 +70,7 @@ h2{
 }
 
 
-/*-----    Bloc Question   -------*/
+/*-----    $PAGE Quiz   -------*/
 .bloc-question{
     width: 50%;
     height: 50%;
@@ -83,6 +83,10 @@ h2{
     font-size: 1.2em;
 }
 
+.question{
+  margin-bottom: 20px;
+}
+
 .bouton-question{
     text-align: right;
 }
@@ -91,6 +95,34 @@ h2{
     width: 90%;
     margin: auto;
 } 
+
+.box_solution{
+  border-width: 1px 1px 1px 5px;
+  border-style: solid;
+  border-color: black;
+  border-left-color: #CE4844;
+  border-radius: 15px 80px;
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+.box_solution h3{
+  margin-top: 0;
+  color: #CE4844;
+}
+
+.box_solution .remember{
+  margin-top: 25px;
+}
+
+.bouton_next{
+  float: right;
+  position: relative;
+  bottom: 35px;
+}
+
+.glyphicon{
+  margin-left: 5px;
+}
 
 /*------- PAGE ADMIN -----*/
 
