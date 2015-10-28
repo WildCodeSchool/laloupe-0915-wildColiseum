@@ -41,6 +41,11 @@ body{
    margin-top: 20px;
 }
 
+.user {
+    color:white;
+    line-height: 50px;
+}
+
 /*----    $PAGE Login    -------*/
 h1{
    text-align: center;

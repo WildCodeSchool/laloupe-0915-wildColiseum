@@ -19,6 +19,10 @@ function config($routeProvider) {
 			templateUrl: 'views/postQuestion.html',
 			controller: 'postQuestionController'
 		})
+		.when('/monProfil', {
+			templateUrl: 'views/monProfil.html',
+			controller: 'monProfilController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -33,14 +37,19 @@ function run($rootScope, $location){
 
 angular.module('app', ['ngRoute'])
     .config(config)
+    
     .controller('connectController', connectController)
     .controller('profilController', profilController)
     .controller('postQuestionController', postQuestionController)
     .controller('quizController', quizController)
+    .controller('monProfilController', monProfilController)
+
     .service('connectService', connectService)
     .service('userService', userService)
     .service('postQuestionService', postQuestionService)
     .service('quizService', quizService)
+    .service('monProfilService', monProfilService)
+
     /*.factory('', )*/
     .run(run);
 

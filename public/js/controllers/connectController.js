@@ -1,5 +1,5 @@
 // MAIN CONTROLLER
-function connectController($scope, $http, $location, connectService) {
+function connectController($scope, $rootScope, $http, $location, connectService) {
 	$scope.title = "Wild coliseum"; //regarder doc angular.js $location
 	
 
@@ -7,16 +7,19 @@ function connectController($scope, $http, $location, connectService) {
 		var login = {};
 		login.pseudo = $scope.pseudo;
 		login.password = $scope.password;
+
 		connectService.login(login).then(function(res){
 			//SUCCESS
-			if (res.data){
-				alert("bienvenue");
-				$location.path('/quiz'); //  $location est natif angular. Est placé en paramètre.
+			if (!res.data){
+				alert("pseudo ou mot de passe incorrect");
+				$location.path('/connect');
 			}
 			//ERREUR
 			else{
-				alert("pseudo ou mot de passe incorrect");
-				$location.path('/connect');
+				alert("bienvenue");
+				$rootScope.user = res.data;
+				$location.path('/quiz'); //  $location est natif angular. Est placé en paramètre.
+				console.log($rootScope.user);
 			}
 		})
 	}

@@ -1,6 +1,6 @@
 //    CONTROLLER QUIZ
 
-function quizController($scope, $http, $location, quizService){
+function quizController($scope, $rootScope, $http, $location, quizService){
 	
 	$scope.choices = [];
 

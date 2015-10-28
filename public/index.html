@@ -20,11 +20,13 @@
     <script src="js/controllers/profilController.js"></script>
     <script src="js/controllers/postQuestionController.js"></script>
     <script src="js/controllers/quizController.js"></script>
+    <script src="js/controllers/monProfilController.js"></script>
 
     <script src="js/services/connectService.js"></script>
     <script src="js/services/userService.js"></script>
     <script src="js/services/postQuestionService.js"></script>
     <script src="js/services/quizService.js"></script>
+    <script src="js/services/monProfilService.js"></script>
 
     <!-- ROUTE -->
     <script src="js/app.js"></script>
@@ -41,6 +43,11 @@
                <li ng-class="{active: activetab=='/'}"><a href="#/">Accueil</a></li>  
                <li ng-class="{active: activetab=='/profil'}"><a href="#/profil">Inscription</a></li>
                <li ng-class="{active: activetab=='/postQuestion'}"><a href="#/postQuestion">Ajout Question</a></li>
+
+           </ul>
+           <ul ng-if="user" class="nav navbar-nav pull-right">
+             <li class="user">Connecté: {{ user.pseudo }}</li>
+             <li class="user"><a href="#/monProfil">Mon profil</a></li>
            </ul>
        </div>
    </nav> 
