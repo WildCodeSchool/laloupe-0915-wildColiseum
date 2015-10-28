@@ -16,11 +16,14 @@ function profilController($scope, $location, userService){
 				alert("Votre compte a été créé avec succés.");
 				$location.path('/');
 			});
-		}else{
-			alert("Erreur lors de la création du compte, merci de renseigner tous les champs");
+		} else {
+			alert("Erreur lors de la création du compte, merci de renseigner tous les champs"); // Ne s'affiche jamais
 			$location.path('/profil');
-		}
+		}	
 	}
 
 }
 
+//  FÎNIR ELSE IF... ERREUR: conditions non prises en charges.
+
+// ETABLIR CRITÈRE DE VALIDATION POUR FORMULAIRE DE DEPÔT DE QUESTION.
