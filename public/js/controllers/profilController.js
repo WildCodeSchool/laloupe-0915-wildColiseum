@@ -16,18 +16,7 @@ function profilController($scope, $location, userService){
 				alert("Votre compte a été créé avec succés.");
 				$location.path('/');
 			});
-		}else if($scope.signin.pseudo.$valide != true){
-			alert('Erreur dans le champs "pseudo".');
-		}else if($scope.signin.email.$valide != true){
-			alert('Erreur dans le champs "email".');
-		}else if($scope.signin.password.$valide != true){
-			alert('Erreur dans le champs "password".');
-		}else if($scope.signin.nom.$valide != true){
-			alert('Erreur dans le champs "nom".');
-		}else if($scope.signin.prénom.$valide != true){
-			alert('Erreur dans le champs "prénom".');
-		}
-		else{
+		}else{
 			alert("Erreur lors de la création du compte, merci de renseigner tous les champs");
 			$location.path('/profil');
 		}
