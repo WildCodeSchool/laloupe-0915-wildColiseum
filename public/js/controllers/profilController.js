@@ -16,22 +16,25 @@ function profilController($scope, $location, userService){
 				alert("Votre compte a été créé avec succés.");
 				$location.path('/');
 			});
-		}else if($scope.signin.pseudo.$valide != true){
+		}else if($scope.signin.pseudo.$valid != true){
 			alert('Erreur dans le champs "pseudo".');
-		}else if($scope.signin.email.$valide != true){
+		}else if($scope.signin.email.$valid != true){
 			alert('Erreur dans le champs "email".');
-		}else if($scope.signin.password.$valide != true){
+		}else if($scope.signin.password.$valid != true){
 			alert('Erreur dans le champs "password".');
-		}else if($scope.signin.nom.$valide != true){
+		}else if($scope.signin.nom.$valid != true){
 			alert('Erreur dans le champs "nom".');
-		}else if($scope.signin.prénom.$valide != true){
+		}else if($scope.signin.prénom.$valid != true){
 			alert('Erreur dans le champs "prénom".');
 		}
 		else{
-			alert("Erreur lors de la création du compte, merci de renseigner tous les champs");
+			alert("Erreur lors de la création du compte, merci de renseigner tous les champs"); // Ne s'affiche jamais
 			$location.path('/profil');
 		}
 	}
 
 }
 
+//  FÎNIR ELSE IF... ERREUR: conditions non prises en charges.
+
+// ETABLIR CRITÈRE DE VALIDATION POUR FORMULAIRE DE DEPÔT DE QUESTION.
