@@ -90,6 +90,13 @@ h2{
     height: 50%;
     margin: auto;
     margin-top: 90px;
+
+  border-width: 1px 5px 1px 1px;
+  border-style: solid;
+  border-color: #C0CA3D;
+  border-right-color: #C0CA3D;
+  border-radius: 15px 80px;
+  padding: 20px 40px;
 }
 
 .bloc-question p{
@@ -113,7 +120,7 @@ h2{
 .box_solution{
   border-width: 1px 1px 1px 5px;
   border-style: solid;
-  border-color: black;
+  border-color: #CE4844;
   border-left-color: #CE4844;
   border-radius: 15px 80px;
   padding: 20px 40px;

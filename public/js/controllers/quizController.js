@@ -1,6 +1,7 @@
 //    CONTROLLER QUIZ
 
 function quizController($scope, $http, $location, quizService){
+	
 	$scope.choices = [];
 
 	var max = 0;
@@ -17,6 +18,7 @@ function quizController($scope, $http, $location, quizService){
 	}
 
 	function load(){
+		$scope.disableQuiz = false;
 		quizService.get().then(function(res){
 			// $scope.questions = res.data;
 			max = res.data.length;			
@@ -65,6 +67,7 @@ function quizController($scope, $http, $location, quizService){
 			}
 			//ERREUR
 			else{
+				$scope.disableQuiz = true;
 				$scope.enonceOk = true;
 			}
 		})
