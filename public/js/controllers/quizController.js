@@ -3,6 +3,7 @@
 function quizController($scope, $rootScope, $http, $location, quizService){
 	
 	$scope.choices = [];
+	$scope.disableQuiz = true;
 
 	var max = 0;
 	$scope.random = function() {
@@ -18,39 +19,51 @@ function quizController($scope, $rootScope, $http, $location, quizService){
 	}
 
 	function load(){
-		$scope.disableQuiz = false;
-		quizService.get().then(function(res){
+		$scope.disableQuiz = true;
+		
+		quizService.getQuestionsByTheme($scope.theme).then(function(res){
 		// $scope.questions = res.data;
-		max = res.data.length;			
-		var id =  Math.floor(Math.random() * max);
-		$scope.question = res.data[id];
-		
+		max = res.data.length;
 
-		$scope.choix_1 = res.data[id].choix_1_valide;
-		$scope.choix_2 = res.data[id].choix_2;
-		$scope.choix_3 = res.data[id].choix_3;
-		$scope.choix_4 = res.data[id].choix_4;
+			if (max > 0) {
+				$scope.noQuestion = true;
+				$scope.pasQuestion = false;
 
-		
-		var i = superRandom([-1]);
-		//console.log(i);
-		$scope.choices[i] = {id:0, message:res.data[id].choix_1_valide};
-		
-		var j  = superRandom([i]);
-		//console.log(j);
-		$scope.choices[j] = {id: 1, message:res.data[id].choix_2};
+				var id =  Math.floor(Math.random() * max);
+				$scope.question = res.data[id];
+				$scope.choix_1 = res.data[id].choix_1_valide;
+				$scope.choix_2 = res.data[id].choix_2;
+				$scope.choix_3 = res.data[id].choix_3;
+				$scope.choix_4 = res.data[id].choix_4;
 
-		var k  = superRandom([i,j]);
-		//console.log(k);
-		$scope.choices[k] = {id: 2, message:res.data[id].choix_3};
+				
+				var i = superRandom([-1]);
+				//console.log(i);
+				$scope.choices[i] = {id:0, message:res.data[id].choix_1_valide};
+				
+				var j  = superRandom([i]);
+				//console.log(j);
+				$scope.choices[j] = {id: 1, message:res.data[id].choix_2};
 
-		var l  = superRandom([i,j, k]);
-		//console.log(l);
-		$scope.choices[l] = {id: 3, message:res.data[id].choix_4};
+				var k  = superRandom([i,j]);
+				//console.log(k);
+				$scope.choices[k] = {id: 2, message:res.data[id].choix_3};
 
+				var l  = superRandom([i,j, k]);
+				//console.log(l);
+				$scope.choices[l] = {id: 3, message:res.data[id].choix_4};
+
+			} else {
+				$scope.noQuestion = false;
+				$scope.pasQuestion = true;
+			}
 		});
 	}
-	load();
+
+	$scope.select = function(){
+		$scope.disableQuiz = false;
+
+	}
 
 	$scope.send_res = function(){
 		var response = {};
@@ -77,4 +90,17 @@ function quizController($scope, $rootScope, $http, $location, quizService){
 		$scope.enonceOk = false;
 		load();
 	}
+
+	function loadTheme(){
+		quizService.getTheme().then(function(res){
+			$scope.themes = res.data;
+		});
+	}
+
+	$scope.selectTheme = function(){
+		load();
+		$scope.enonceOk = false;
+	}
+
+	loadTheme();
 }

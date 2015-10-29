@@ -5,7 +5,12 @@ function quizService($http){
 		},
 		send_res : function() {
 			return $http.get ('/response');
+		},
+		getTheme : function() {
+			return $http.get('/themes');
+		},
+		getQuestionsByTheme: function(idTheme){
+			return $http.get('/questions/theme/' + idTheme);
 		}
-
 	}
 }

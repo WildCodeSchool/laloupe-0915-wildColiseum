@@ -14,7 +14,10 @@ module.exports 	= function(app) {
 	app.put('/questions/:id', Question.update);
 
 	app.delete('/questions/:id', Question.delete);
-  
+
+  	app.get('/questions/theme/:id', Question.findQuestionByTheme)
+
+	app.post('/response', Question.verify);  	
 // THEME
 
   	app.get('/themes', Theme.findAllTheme);

@@ -90,19 +90,39 @@ h2{
 }
 
 /*-----    $PAGE Quiz   -------*/
-.bloc-question{
+.bloc-select-question{
     width: 50%;
     height: 50%;
     margin: auto;
     margin-top: 90px;
 
-  border-width: 1px 5px 1px 1px;
+  border-width: 1px 5px 1px 5px;
+  border-style: solid;
+  border-color: #C0CA3D;
+  border-left-color: #C0CA3D;
+  border-radius: 80px 15px 15px 15px;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.bloc-question{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 10px;
+
+  border-width: 1px 5px 1px 5px;
   border-style: solid;
   border-color: #C0CA3D;
   border-right-color: #C0CA3D;
-  border-radius: 15px 80px;
+  border-radius: 15px 15px 80px 15px;
   padding: 20px 40px;
 }
+
+/*.bloc-select-question p, .bloc-select-question select{
+  display: inline-block;
+
+}*/
 
 .bloc-question p{
     font-weight: bold;

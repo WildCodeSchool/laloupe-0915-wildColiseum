@@ -25,7 +25,7 @@ function postQuestionController($scope, $http, postQuestionService){
 		question.choix_3 = $scope.choix_3;
 		question.choix_4 = $scope.choix_4;
 		question.enonce_solution = $scope.enonce_solution;
-		question.idTheme = $scope.theme;  // RECUPERER L'ID DU THEME SELECTIONNER
+		question.idTheme = $scope.theme;  // RECUPERE L'ID DU THEME SELECTIONNER
 		
 		postQuestionService.create(question).then(function(res){
 			//SUCCESS

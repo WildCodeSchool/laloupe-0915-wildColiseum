@@ -63,6 +63,27 @@ module.exports.delete = function(req, res){
   })
 };
 
+module.exports.findQuestionByTheme = function(req, res){
+   Question.findAll({
+     where : {
+       idTheme : req.params.id
+     }
+   }).then(function(data){
+       res.json(data);
+   }) 
+}
+
+module.exports.verify = function(req, res){
+  Question.findOne({
+    where: {
+      question: req.body.question,
+      choix_1_valide: req.body.selectedChoice
+    }
+  }).then(function(question, choix_1_valide){
+    res.json(question, choix_1_valide);
+  })
+}
+
 // THEME question
 
 var db = require('../../config/database.js');
