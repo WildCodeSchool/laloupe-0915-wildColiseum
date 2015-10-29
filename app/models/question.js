@@ -5,6 +5,7 @@ var db = require('../../config/database.js');
 
 var Question = db.define('question', {
   question: Sequelize.STRING,
+  idTheme: Sequelize.BIGINT,
   choix_1_valide: Sequelize.STRING,
   choix_2: Sequelize.STRING,
   choix_3: Sequelize.STRING,
@@ -22,7 +23,8 @@ module.exports.create = function(req, res) {
 		choix_2: req.body.choix_2,
 		choix_3: req.body.choix_3,
 		choix_4: req.body.choix_4,
-		enonce_solution: req.body.enonce_solution
+		enonce_solution: req.body.enonce_solution,
+    idTheme: req.body.idTheme
 	}).then(function(){
 		res.sendStatus(200);
 	})
@@ -60,3 +62,37 @@ module.exports.delete = function(req, res){
     res.sendStatus(200);
   })
 };
+
+// THEME question
+
+var db = require('../../config/database.js');
+
+var Theme = db.define('theme', {
+  theme: Sequelize.STRING
+});
+
+Theme.sync().then(function(){});
+
+module.exports.findAllTheme = function(req, res) {
+  Theme.findAll().then(function (data) {
+    res.json(data); 
+  });
+};
+
+module.exports.createTheme = function(req, res) {
+  Theme.create({
+    theme: req.body.theme
+  }).then(function(){
+    res.sendStatus(200);
+  })
+};
+
+// module.exports.deleteTheme = function(req, res){
+//   Theme.destroy({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function(){
+//     res.sendStatus(200);
+//   })
+// };

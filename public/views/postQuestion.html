@@ -3,31 +3,32 @@
     <form class="question" ng-model="question" name="post_question" ng-submit="sendQuestion()">
         <div class="bloc_input">
     		<p class="bold">Question :</p>
-            <textarea label="question" ng-model="question" name="question" required></textarea>
+            <textarea label="question" ng-model="question" name="question" ></textarea>
         </div>
-        <!-- <div>
-            <p>Thème de la question :</p>
-            <select ng-model="theme">
-                <option>HTML</option>
-                <option>CSS</option>
-                <option>JavaScript</option>
-                <option>Ruby</option>
-                <option>PHP</option>
+        <div>
+            <p class="bold">Thème de la question :</p>
+            <select ng-model="theme" required>
+                <option value="" disabled>Sélectionnez un thème</option>
+                <option ng-repeat="theme in themes" value="{{theme.id}}">{{theme.theme}}</option>
             </select>
-        </div> -->
+            <!-- <select ng-options="theme for theme in themes" ng-model="theme">
+                <option value="" disabled>Sélectionnez un thème</option>
+            </select> -->
+
+        </div>
         <!--rajouter ng-model, label pour Select-->
         <div class="bloc_input">
             <p class="bold">Choix 1 :</p>
             <p><i>Le choix 1 est la réponse valide à l'énoncé.</i></p>
-            <input type="text" label="choix_1_valide" ng-model="choix_1_valide" name="choix_1_valide" required />
+            <input type="text" label="choix_1_valide" ng-model="choix_1_valide" name="choix_1_valide" required/>
         </div>
         <div class="bloc_input">
             <p class="bold">Choix 2 :</p>
-            <input type="text" label="choix_2" ng-model="choix_2" name="choix_2" required />
+            <input type="text" label="choix_2" ng-model="choix_2" name="choix_2" required/>
         </div>
         <div class="bloc_input">
     		<p class="bold">Choix 3:</p>
-            <input type="text" label="choix_3" ng-model="choix_3" name="choix_3" required />
+            <input type="text" label="choix_3" ng-model="choix_3" name="choix_3" required/>
         </div>
         <div class="bloc_input">
             <p class="bold">Choix 4 :</p>
@@ -35,13 +36,21 @@
         </div>
         <div class="bloc_input">
             <p class="bold">Enoncé de solution :</p>
-            <textarea label="enonce_solution" ng-model="enonce_solution" name="enonce_solution" required ></textarea>
+            <textarea label="enonce_solution" ng-model="enonce_solution" name="enonce_solution" required></textarea>
         </div>
        
         <div class="bouton-send">
    	       <input type="submit" class="btn btn-default" value="Envoyer"/>
         </div>
     </form>
+
+<h3>Créer un nouveau thème :</h3>
+    <form class="question" ng-model="theme" name="post_theme">
+            <input type="text" label="theme" ng-model="theme.theme" name="theme"/>
+           <button type="submit" class="btn btn-default" value="Envoyer" ng-click="sendTheme()">Envoyer</button>
+    </form>
+
+
 
 <h3>Liste des questions</h3>
         <ul class="list-group">
@@ -79,7 +88,6 @@
                             <button type="submit" class="btn btn-danger" ng-click="delete(question)">Supprimer</button>
                         </div>
                     </div>
-                    
                 </form>
             </li>
         </ul>
