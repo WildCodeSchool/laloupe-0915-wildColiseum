@@ -12,7 +12,7 @@ body{
    padding-top: 70px;
 }
 .navbar-border{
-    border-bottom: 3px solid #F0DB4F;
+    border-bottom: 3px solid #C0CA3D;
 }
 
 .navbar-header img{
@@ -42,8 +42,61 @@ body{
 }
 
 .user {
-    color:white;
+    color: white;
     line-height: 50px;
+}
+/*
+.box-lf{
+  position: relative;
+  width: 150px;
+}
+*/
+.box-left{
+  position: relative;
+  top: -17px;
+  border-right: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 35px  0;
+  width: 250px;
+  padding-left: 50px;
+  padding-top: 20px;
+
+}
+
+.box-right-top{
+   position: relative;
+   top: -17px;
+   left: 20px;
+   margin-bottom: 20px;
+  border-left: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 0 35px;
+}
+
+.box-right{
+   position: relative;
+   top:-18px;
+   left: 20px;
+   margin-bottom: 20px;
+  border-left: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 0 35px;
+}
+
+.top-right{
+  height: 30px;
+  width: 150px;
+  position: relative;
+  right: 15px;
+  border-left: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 0 35px;
+  width: 120px;
+
+}
+
+.form-quiz{
+  margin-bottom: 20px;
 }
 
 /*----    $PAGE Login    -------*/
@@ -53,7 +106,16 @@ h1{
 }
 
 h2{
-    margin: 50px;
+    margin: 30px;
+    margin-bottom: 20px;
+    margin-top:10px;
+}
+
+h3{
+  margin: 30px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 .form_login{
@@ -67,16 +129,30 @@ h2{
    margin-top: 20px;
 }
 
+.box-titre-centre{
+  position: relative;
+  top: -20px;
+  text-align: center;
+  width: 850px;
+  margin: auto;
+  padding-left: 150px;
+  padding-top: 20px;
+  padding-right: 15px;
+     text-align: center;
+  border-right: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 35px  0;
+}
+
 /*-----    $PAGE profil   -----*/
 .inscription{
     width: 400px;
     margin: auto;
     text-align: center;
-
 }
 
 .inscription div{
-  margin: 50px;
+  margin: 30px;
   text-align: left;
 }
 
@@ -87,6 +163,35 @@ h2{
 .inscription input[type="submit"]{
   text-align: center;
   float: none;
+}
+
+.bloc-inscription{
+ position: relative;
+   /*left: 20px;*/
+   margin-bottom: 10px;
+   padding-left: 10px;
+   padding-bottom: 5px;
+   padding-top: 15px;
+  border-left: 5px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 0 20px;
+}
+
+.bloc-inscription input{
+   text-align: right;
+   padding-right: 5px;
+}
+
+.box-titre{
+  display: inline-block;
+  position: relative;
+  top: -25px;
+   left: 20px;
+   padding: 20px 30px;
+   padding-right: 100px;
+  border-left: 8px solid #C0CA3D;
+  border-bottom: 1px solid #C0CA3D;
+  border-radius: 0 0 0 50px;
 }
 
 /*-----    $PAGE Quiz   -------*/
@@ -117,6 +222,11 @@ h2{
   border-right-color: #C0CA3D;
   border-radius: 15px 15px 80px 15px;
   padding: 20px 40px;
+}
+
+.inline-block{
+  display: inline-block;
+  margin-right: 10px;
 }
 
 /*.bloc-select-question p, .bloc-select-question select{

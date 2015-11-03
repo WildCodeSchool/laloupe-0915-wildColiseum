@@ -1,19 +1,19 @@
-<h1> Inscription</h1>
+<h1 class="box-titre">Inscription</h1>
     <form class= "inscription" ng-model="inscription" name="signin" ng-submit="send()">
-            <div>
-                Pseudo : <input type="text" label="nom" ng-model="pseudo" name="pseudo" required/> 
+            <div class="bloc-inscription">
+                Pseudo : <input type="text" label="nom" ng-model="pseudo" name="pseudo" placeholder="Entrez votre pseudo" required/> 
             </div>
-            <div>
-                Mail : <input type="email" label="mail" ng-model="email" name="email" required/>
+            <div class="bloc-inscription">
+                Mail : <input type="email" label="mail" ng-model="email" name="email" placeholder="Entrez votre e-mail" required/>
             </div>
-            <div>
-                Mot de Passe :<input type="password" label="mot de passe" ng-model="password" name="password" required/>
+            <div class="bloc-inscription">
+                Mot de Passe :<input type="password" label="mot de passe" ng-model="password" name="password" placeholder="Mot de passe" required/>
             </div>
-            <div>
-                Nom : <input type="text" label="nom" ng-model="nom" name="nom" required/>
+            <div class="bloc-inscription">
+                Nom : <input type="text" label="nom" ng-model="nom" name="nom" placeholder="Entrez votre nom" required/>
             </div>
-            <div>
-                Prénom : <input type="text" label="prénom" ng-model="prenom" name="prenom" required/>
+            <div class="bloc-inscription">
+                Prénom : <input type="text" label="prénom" ng-model="prenom" name="prenom" placeholder="Entrez votre prénom" required/>
             </div>
            <input type="submit" class="btn btn-default" value="Valider"/>
     </form>

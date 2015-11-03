@@ -1,6 +1,11 @@
-<h2>Admin</h2>
-<h3>Ajouter une question</h3>
-    <form class="question" ng-model="question" name="post_question" ng-submit="sendQuestion()">
+<div class="box-left">        
+    <h2>Panel</h2>
+</div>
+<div class="box-right-top">
+    <h3>Ajouter une question</h3>
+</div>
+
+    <form class="question form-quiz" ng-model="question" name="post_question" ng-submit="sendQuestion()">
         <div class="bloc_input">
     		<p class="bold">Question :</p>
             <textarea label="question" ng-model="question" name="question" ></textarea>
@@ -44,18 +49,22 @@
         </div>
     </form>
 
-<h3>Créer un nouveau thème :</h3>
-    <form class="question" ng-model="theme" name="post_theme">
-            <input type="text" label="theme" ng-model="theme.theme" name="theme"/>
+<div class="box-right">
+    <h3>Créer un nouveau thème :</h3>
+</div>
+    <form class="question form-quiz" ng-model="theme" name="post_theme">
+            <p class="bold inline-block">Nom du thème : </p><input class="inline-block" type="text" label="theme" ng-model="theme.theme" name="theme"/>
            <button type="submit" class="btn btn-default" value="Envoyer" ng-click="sendTheme()">Envoyer</button>
     </form>
 
-
-
-<h3>Liste des questions</h3>
+<!-- <div class="top-right">
+</div> -->
+<div class="box-right">
+    <h3>Liste des questions</h3>
+</div>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="question in questions">
-                <form class="form-inline">
+                <form class="form-inline form-quiz">
                     <div>
                         <div class="form-group ">
                             <h4>Enoncé de la question :</h4>

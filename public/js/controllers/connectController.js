@@ -1,6 +1,6 @@
 // MAIN CONTROLLER
 function connectController($scope, $rootScope, $http, $location, connectService) {
-	$scope.title = "Wild coliseum"; //regarder doc angular.js $location
+	$scope.title = "Wild Code Coliseum"; //regarder doc angular.js $location
 	
 
 	$scope.connect = function(){
