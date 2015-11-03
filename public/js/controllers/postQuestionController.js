@@ -51,10 +51,9 @@ function postQuestionController($scope, $http, postQuestionService){
 	}
 
 	$scope.sendTheme = function(){
-		var theme = {};
-		theme = $scope.theme;
-		
-		postQuestionService.createTheme(theme).then(function(res){
+		var data = {};
+		data.theme = $scope.theme_post;
+		postQuestionService.createTheme(data).then(function(res){
 			//SUCCESS
 			alert('Thème ajouté');
 			loadTheme();
