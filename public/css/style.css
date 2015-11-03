@@ -313,6 +313,10 @@ tbody tr td textarea{
   height: 100%;
 }
 
+tbody tr td .btn{
+  font-size: 14px;
+}
+
 .bloc_update{
   margin: 20px;
 }
