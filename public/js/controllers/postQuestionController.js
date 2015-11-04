@@ -12,7 +12,7 @@ function postQuestionController($scope, $http, postQuestionService){
 //Load Question By Theme
 	function load2(){
 		postQuestionService.getQuestionsByTheme($scope.theme_choice).then(function(res){
-			$scope.questions = res.data;
+				$scope.questions = res.data;
 		})
 	}
 
@@ -20,9 +20,9 @@ function postQuestionController($scope, $http, postQuestionService){
 		load2();
 	}
 
-	// $scope.select = function(){
-	// 	load2();
-	// }
+	$scope.select = function(){
+		load2();
+	}
 
 //Load Theme
 	function loadTheme(){
@@ -44,7 +44,7 @@ function postQuestionController($scope, $http, postQuestionService){
 		postQuestionService.create(question).then(function(res){
 			//SUCCESS
 			alert('Question ajouté');
-			load();
+			load2();
 		}, function(res){
 			//ERROR
 			alert("Erreur dans l'ajout de la question");
@@ -54,13 +54,13 @@ function postQuestionController($scope, $http, postQuestionService){
 
 	$scope.update = function(question){
 		postQuestionService.update(question.id, question).then(function(res){
-			load();
+			load2();
 		});
 	}
 
 	$scope.delete = function(question){
 		postQuestionService.delete(question.id).then(function(res){
-			load();
+			load2();
 		});
 	}
 
@@ -71,20 +71,17 @@ function postQuestionController($scope, $http, postQuestionService){
 			//SUCCESS
 			alert('Thème ajouté');
 			loadTheme();
-			load();
 		}, function(res){
 			//ERROR
 			alert("Erreur dans l'ajout du thème");
 		});
 	}
 
-
 	$scope.deleteTheme = function(theme){
 		postQuestionService.deleteTheme(theme.id).then(function(res){
 			load();
 		});
 	}
-
 
 	load();
 	loadTheme();
