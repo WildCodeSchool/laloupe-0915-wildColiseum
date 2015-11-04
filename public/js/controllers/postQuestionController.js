@@ -3,6 +3,7 @@
 function postQuestionController($scope, $http, postQuestionService){
 
 //Load Question
+	// Utile seulement pour charger toutes les questions dans la liste de questions
 	function load(){
 		postQuestionService.get().then(function(res){
 			$scope.questions = res.data;
@@ -83,6 +84,6 @@ function postQuestionController($scope, $http, postQuestionService){
 		});
 	}
 
-	load();
+	load(); // Utile seulement pour liste des questions.... à suppr?
 	loadTheme();
 }
