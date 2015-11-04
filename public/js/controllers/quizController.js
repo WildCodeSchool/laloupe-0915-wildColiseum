@@ -1,7 +1,7 @@
 //    CONTROLLER QUIZ
 
 function quizController($scope, $rootScope, $http, $location, quizService){
-	
+
 	$scope.choices = [];
 	$scope.disableQuiz = true;
 

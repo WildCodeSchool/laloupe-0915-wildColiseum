@@ -17,6 +17,9 @@ function postQuestionService($http){
 		},
 		getTheme : function() {
 			return $http.get('/themes');
+		},
+		getQuestionsByTheme: function(idTheme){
+			return $http.get('/questions/theme/' + idTheme);
 		}
 		// ,
 		// deleteTheme : function(id) {

@@ -57,7 +57,7 @@
     <h3>Liste des questions</h3>
 </div>
 <p class="bold">Filtrer les questions par thèmes :
-<select ng-model="theme_filter" required>
+<select ng-model="theme_choice" ng-change="selectTheme()">
     <option value="" disabled>Sélectionnez un thème</option>
     <option ng-repeat="theme in themes" value="{{theme.id}}">{{theme.theme}}</option>
 </select>
@@ -83,7 +83,7 @@
             <!-- <td ng-model="question.id"></td> -->
             <td><textarea class="area_question" ng-model="question.question"></textarea></td>
             <td><textarea class="area_question" ng-model="question.choix_1_valide"></textarea></td>
-            <td><textarea ng-model="question.choix_2"></textarea></td>
+            <td><textarea ng-model="question.choix_2" ng-change="$parent.select()"></textarea></td>
             <td><textarea ng-model="question.choix_3"></textarea></td>
             <td><textarea ng-model="question.choix_4"></textarea></td>
             <td><textarea ng-model="question.enonce_solution"></textarea></td>

@@ -2,14 +2,29 @@
 
 function postQuestionController($scope, $http, postQuestionService){
 
-	//Load Question
+//Load Question
 	function load(){
 		postQuestionService.get().then(function(res){
 			$scope.questions = res.data;
 		});
 	}
 
-	//Load Theme
+//Load Question By Theme
+	function load2(){
+		postQuestionService.getQuestionsByTheme($scope.theme_choice).then(function(res){
+			$scope.questions = res.data;
+		})
+	}
+
+	$scope.selectTheme = function(){
+		load2();
+	}
+
+	// $scope.select = function(){
+	// 	load2();
+	// }
+
+//Load Theme
 	function loadTheme(){
 		postQuestionService.getTheme().then(function(res){
 			$scope.themes = res.data;
@@ -17,7 +32,6 @@ function postQuestionController($scope, $http, postQuestionService){
 	}
 
 	$scope.sendQuestion = function(){
-		// var id = {};
 		var question = {};
 		question.question = $scope.question;
 		question.choix_1_valide = $scope.choix_1_valide;
@@ -70,6 +84,7 @@ function postQuestionController($scope, $http, postQuestionService){
 			load();
 		});
 	}
+
 
 	load();
 	loadTheme();
